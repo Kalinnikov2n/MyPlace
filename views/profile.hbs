@@ -1,0 +1,110 @@
+<div style="width: 100%; display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+flex-direction: column ;">
+<div style="width: 100%; display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+justify-content: space-around; ">
+    <div id="last" style="color:rgba(0, 0, 0, 0.561)">
+        Ваши места: <br>
+        {{#each plan}}
+        <div class="P{{this.place}}" style="width: 405px;
+display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+justify-content: center;
+justify-content: space-between;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{this.place}}"
+                style="background-color:rgb(54, 54, 54); white; border-color:rgb(122, 122, 122); width:245px; border-radius: 15px">
+                {{this.place}}
+            </button>
+
+        </div>
+        <div class="modal fade" id="{{this.place}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="card container"
+                    style="width: 18rem; background-color: rgba(0, 0, 0, 0.561); border-radius: 30px ">
+                    <div class="card-body" style="color: white">
+                        <h5 class="card-title">{{this.place}}</h5>
+                        <p id="adrP{{this.place}}" class="card-text"> Адресс: {{this.adress}} <br> </p>
+                        <p id="catP{{this.place}}"> Категория: {{this.cat}}
+                        </p>
+                        <div style="display: -webkit-flex; 
+-webkit-flex-direction: row-reverse;
+display: flex;
+justify-content: space-around;">
+                            <button class="btn btn-primary container"
+                                style="border-radius: 30px; background-color:rgba(214, 19, 19, 0.431); border-color:rgb(54, 54, 54)">Закрыть</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    {{/each}}
+</div>
+</br>
+<div style="color:rgba(0, 0, 0, 0.561)">
+    Ваши планы: <br>
+    {{#each plans}}
+    <div class="{{this.place}}" style="width: 405px;
+display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+justify-content: center;
+justify-content: space-between;">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{this.place}}"
+            style="background-color: rgb(54, 54, 54); white; border-color:rgb(122, 122, 122); width:245px; border-radius: 15px">
+            {{this.place}}
+        </button>
+        <button id="ad" class="btn btn-primary" name="{{this.place}}"
+            style="border-radius: 3px;  color:black;background-color:rgba(255, 255, 255, 0.431);border-color:rgb(54, 54, 54)"> +
+            </button>
+        <button id="delt" class="btn btn-primary" name="{{this.place}}"
+            style="border-radius: 3px;  color:black;background-color:rgba(255, 255, 255, 0.431);border-color:rgb(54, 54, 54)">-</button>    
+    </div>
+    <div class="modal fade" id="{{this.place}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="card container"
+                style="width: 18rem; background-color: rgba(0, 0, 0, 0.561); border-radius: 30px ">
+                <div class="card-body" style="color: white">
+                    <h5 class="card-title">{{this.place}}</h5>
+                    <p id="adrP{{this.place}}" class="card-text"> Адресс: {{this.adress}} <br> </p>
+                    <p id="catP{{this.place}}"> Категория: {{this.cat}}
+                    </p>
+                    <div style="display: -webkit-flex; 
+-webkit-flex-direction: row-reverse;
+display: flex;
+justify-content: space-around;">
+                        <button class="btn btn-primary container"
+                            style="border-radius: 30px; background-color:rgba(214, 19, 19, 0.431); border-color:rgb(54, 54, 54)">Закрыть</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+{{/each}}
+</div>
+</div>
+</br>
+<div class="btn-group" role="group" aria-label="Basic example" style="display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+justify-content: left;
+width: 100%;">
+    <a href="http://localhost:3000/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+        style="width: 150px; background-color:#007bff;border-radius: 15px">Log Out</a>
+    <a href="http://localhost:3000/main/quik" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"
+        style="width: 150px;background-color:  #007bff;border-radius: 15px">Back</a>
+</div>
+</div>
+<script>
+    const lastCode = {{{ last }}};
+    const lastHBS = Handlebars.template(lastCode)
+</script>

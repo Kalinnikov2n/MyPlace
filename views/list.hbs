@@ -1,0 +1,36 @@
+
+<div class="{{title}}"style="width: 405px;
+display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+justify-content: center;
+justify-content: space-between;">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{title}}"
+    style="background-color: white; color:black; border-color:rgb(122, 122, 122); width:245px">
+    {{title}}
+</button>
+<button id="plan" class="btn btn-primary" name="{{title}}"
+    style="border-radius: 3px;  color:black;background-color:rgba(255, 255, 255, 0.431);border-color:rgb(54, 54, 54)">Добавить в
+    планы</button>
+</div>
+<div class="modal fade" id="{{title}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="card container" style="width: 18rem; background-color: rgba(0, 0, 0, 0.561); border-radius: 30px ">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p id="adr{{title}}" class="card-text"> Адресс: {{adress}} <br> </p>
+                <p id="cat{{title}}"> Категория: {{cat}}
+                </p>
+                <div style="display: -webkit-flex; 
+-webkit-flex-direction: row-reverse;
+display: flex;
+justify-content: space-around;">
+                    <button class="btn btn-primary container"
+                        style="border-radius: 30px; background-color:rgba(214, 19, 19, 0.431); border-color:rgb(54, 54, 54)">Закрыть</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

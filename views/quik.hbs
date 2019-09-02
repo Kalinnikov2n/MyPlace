@@ -1,0 +1,59 @@
+<div style="display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+justify-content: center;
+justify-content: space-around;
+width: 100%">
+    <div class="list-group" style="width: 405px; margin: 10px; border-radius: 10px; ">
+        <a href="#" class="list-group-item list-group-item-action active"
+            style="border-radius: 30px 30px 0 0; background-color: rgba(0, 0, 0, 0.815); border-color:gray">
+            Категории:
+        </a>
+        <a href="" class="list-group-item list-group-item-action cat">Бары</a>
+        <a href="" class="list-group-item list-group-item-action cat">Рестораны</a>
+        <a href="" class="list-group-item list-group-item-action cat">Парки</a>
+        <a href="" class="list-group-item list-group-item-action cat">Музеи</a>
+        <a href="" class="list-group-item list-group-item-action cat">Библиотеки</a>
+        <a href="" class="list-group-item list-group-item-action cat">Развлечения</a>
+        <input  id="in"class="form-control" type="text" style="border-radius: 0px 0px 0px 0px" placeholder="  Прочее">
+        <input  id= "id" class="form-control" type="submit" style="border-radius: 0px 0px 30px 30px" value="Найти">
+    </div>
+    <div  id= "req" class="list-group " style="width: 405px; margin: 10px">
+        <a href="#" class="list-group-item list-group-item-action active"
+            style="border-radius: 30px 30px 0px 0px; background-color: rgba(0, 0, 0, 0.815); border-color:gray">
+            Рекомендации:
+        </a>
+
+
+    </div>
+</div>
+{{#if user}}
+<div class="btn-group" role="group" aria-label="Basic example" style="display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+justify-content: center;
+justify-content: space-around;
+width: 100%">
+    <button id="profile" type="button" class="btn btn-secondary"
+        style="background-color: rgba(0, 0, 0, 0.815); border-radius: 15px">{{user}}</button>
+    <button id="logout" type="button" class="btn btn-secondary"
+        style="background-color: rgba(0, 0, 0, 0.815);border-radius: 15px">log out</button>
+</div>
+{{else}}
+<div class="btn-group" role="group" aria-label="Basic example" style="display: -webkit-flex; 
+-webkit-justify-content: flex-start;
+display: flex;
+justify-content: center;
+justify-content: space-around;
+width: 100%">
+    <a href="http://localhost:3000/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+        style="width: 150px; background-color: rgba(0, 0, 0, 0.815);border-radius: 15px">Log In</a>
+    <a href="http://localhost:3000/registration" class="btn btn-secondary btn-lg active" role="button"
+        aria-pressed="true"
+        style="width: 150px;background-color: rgba(0, 0, 0, 0.815);border-radius: 15px">Registration</a>
+</div>
+{{/if}}
+<script>
+    const listCode = {{{ list }}};
+    const listHBS = Handlebars.template(listCode)
+</script>
